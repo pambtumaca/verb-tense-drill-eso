@@ -1,37 +1,27 @@
 # Verb Tense Interactive Drill
 
-A simple, interactive web-based exercise for ESO students to practice English verb tenses in present and past.
+## Definición del proyecto
 
-## Project Definition
+El alumnado de ESO suele confundir los tiempos verbales en presente y pasado al escribir frases sencillas. Este recurso está pensado para practicar inglés de forma breve y visual en clase. La primera versión mínima es un pequeño drill con frases para completar y un botón para comprobar cada respuesta.
 
-**Problem:** Secondary school students (ESO) struggle to distinguish and correctly apply past and present verb tenses.
+## Alcance mínimo
 
-**Target Audience:** ESO students (age 12-16)
+- Título claro del recurso.
+- Breve explicación de su objetivo.
+- Tres ejercicios visibles con campo de respuesta.
+- Botón para comprobar cada respuesta.
 
-**Minimum Viable Scope:** An interactive webpage featuring short sentences where students fill in the correct verb form and receive immediate feedback on their answers.
+## Entrega avanzada
 
-## Features
+Este proyecto está preparado como una página estática para publicarse en GitHub Pages.
 
-- ✅ Clean, responsive interface
-- ✅ Multiple sentence completion exercises
-- ✅ Instant feedback (correct/incorrect)
-- ✅ Mobile-friendly design
-- ✅ Accessible HTML structure
+Pasos recomendados para publicar:
 
-## Quick Start
+1. Subir la carpeta a un repositorio de GitHub.
+2. Activar GitHub Pages desde la rama principal.
+3. Copiar la URL publicada y entregarla junto con esta definición.
 
-1. Open `index.html` in your web browser
-2. Complete the sentences by typing the correct verb form
-3. Click "Check answer" to verify your response
+## Estructura
 
-## Future Enhancements
-
-- Add more exercises
-- Include difficulty levels
-- Track student scores
-- Add audio pronunciation
-- Support for other verb tenses
-
-## License
-
-MIT License - Feel free to use and adapt for educational purposes.
+- `index.html`: versión visible del recurso.
+- `README.md`: definición del proyecto y guía de entrega.
