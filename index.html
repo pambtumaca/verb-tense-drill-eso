@@ -191,7 +191,7 @@
       <section class="quiz" id="quiz" aria-label="Verb tense quiz"></section>
 
       <div class="row">
-        <button type="button" id="show-score">Mostrar resultat final</button>
+        <button type="button" id="show-score">Show final score</button>
       </div>
       <div id="final-score" class="results" aria-live="polite"></div>
 
@@ -225,8 +225,8 @@
         item.innerHTML = `
           <label for="q${index + 1}">${index + 1}. ${question.text}</label>
           <div class="row">
-            <input id="q${index + 1}" type="text" placeholder="Escriu la forma verbal">
-            <button type="button" data-index="${index}">Corregir</button>
+            <input id="q${index + 1}" type="text" placeholder="Write the verb form">
+            <button type="button" data-index="${index}">Check answer</button>
           </div>
           <div id="f${index + 1}" class="feedback" aria-live="polite"></div>
         `;
@@ -243,16 +243,16 @@
       const expected = question.answer.toLowerCase();
 
       if (!value) {
-        feedback.textContent = 'Escriu una resposta primer.';
+        feedback.textContent = 'Write an answer first.';
         feedback.className = 'feedback bad';
         return;
       }
 
       if (value === expected) {
-        feedback.textContent = 'Correcte!';
+        feedback.textContent = 'Correct!';
         feedback.className = 'feedback ok';
       } else {
-        feedback.textContent = 'Incorrecte. Torna-ho a provar.';
+        feedback.textContent = 'Incorrect. Try again.';
         feedback.className = 'feedback bad';
       }
     }
@@ -281,7 +281,7 @@
 
     showScoreBtn.addEventListener('click', () => {
       const correct = countCorrectAnswers();
-      finalScore.textContent = `Has encertat ${correct} de ${questions.length} preguntes.`;
+      finalScore.textContent = `You got ${correct} out of ${questions.length} questions right.`;
       finalScore.className = correct === questions.length ? 'results feedback ok' : 'results feedback bad';
     });
   </script>
