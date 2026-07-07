@@ -132,6 +132,7 @@
       min-height: 1.4em;
       margin-top: 10px;
       font-weight: 700;
+      transition: color 0.35s ease;
     }
 
     .feedback.ok {
@@ -149,6 +150,12 @@
       background: #f3f6f9;
       border-radius: 12px;
       color: var(--muted);
+    }
+
+    .results {
+      min-height: 1.4em;
+      margin-top: 6px;
+      font-weight: 700;
     }
 
     @media (max-width: 640px) {
@@ -181,34 +188,12 @@
         <p>This page helps students complete short sentences and check whether the verb form is correct.</p>
       </section>
 
-      <section class="quiz" aria-label="Verb tense quiz">
-        <div class="item">
-          <label for="q1">1. She <em>(go)</em> ____ to school every day.</label>
-          <div class="row">
-            <input id="q1" type="text" placeholder="Write the verb form">
-            <button type="button" onclick="checkAnswer('q1', 'goes', 'f1')">Check answer</button>
-          </div>
-          <div id="f1" class="feedback" aria-live="polite"></div>
-        </div>
+      <section class="quiz" id="quiz" aria-label="Verb tense quiz"></section>
 
-        <div class="item">
-          <label for="q2">2. They <em>(play)</em> ____ football yesterday.</label>
-          <div class="row">
-            <input id="q2" type="text" placeholder="Write the verb form">
-            <button type="button" onclick="checkAnswer('q2', 'played', 'f2')">Check answer</button>
-          </div>
-          <div id="f2" class="feedback" aria-live="polite"></div>
-        </div>
-
-        <div class="item">
-          <label for="q3">3. I <em>(be)</em> ____ tired after school.</label>
-          <div class="row">
-            <input id="q3" type="text" placeholder="Write the verb form">
-            <button type="button" onclick="checkAnswer('q3', 'am', 'f3')">Check answer</button>
-          </div>
-          <div id="f3" class="feedback" aria-live="polite"></div>
-        </div>
-      </section>
+      <div class="row">
+        <button type="button" id="show-score">Mostrar resultat final</button>
+      </div>
+      <div id="final-score" class="results" aria-live="polite"></div>
 
       <div class="footer-note">
         Use this as a short practice activity or as a starting point for a fuller grammar review.
@@ -217,26 +202,88 @@
   </article>
 
   <script>
-    function checkAnswer(inputId, expected, feedbackId) {
-      const input = document.getElementById(inputId);
-      const feedback = document.getElementById(feedbackId);
+    const questions = [
+      {
+        text: 'She <em>(go)</em> ____ to school every day.',
+        answer: 'goes'
+      },
+      {
+        text: 'They <em>(play)</em> ____ football yesterday.',
+        answer: 'played'
+      }
+    ];
+
+    const quizContainer = document.getElementById('quiz');
+    const showScoreBtn = document.getElementById('show-score');
+    const finalScore = document.getElementById('final-score');
+
+    function renderQuiz() {
+      questions.forEach((question, index) => {
+        const item = document.createElement('div');
+        item.className = 'item';
+
+        item.innerHTML = `
+          <label for="q${index + 1}">${index + 1}. ${question.text}</label>
+          <div class="row">
+            <input id="q${index + 1}" type="text" placeholder="Escriu la forma verbal">
+            <button type="button" data-index="${index}">Corregir</button>
+          </div>
+          <div id="f${index + 1}" class="feedback" aria-live="polite"></div>
+        `;
+
+        quizContainer.appendChild(item);
+      });
+    }
+
+    function checkAnswer(index) {
+      const question = questions[index];
+      const input = document.getElementById(`q${index + 1}`);
+      const feedback = document.getElementById(`f${index + 1}`);
       const value = input.value.trim().toLowerCase();
-      const normalizedExpected = expected.toLowerCase();
+      const expected = question.answer.toLowerCase();
 
       if (!value) {
-        feedback.textContent = 'Write an answer first.';
+        feedback.textContent = 'Escriu una resposta primer.';
         feedback.className = 'feedback bad';
         return;
       }
 
-      if (value === normalizedExpected) {
-        feedback.textContent = 'Correct!';
+      if (value === expected) {
+        feedback.textContent = 'Correcte!';
         feedback.className = 'feedback ok';
       } else {
-        feedback.textContent = 'Not quite. Try again.';
+        feedback.textContent = 'Incorrecte. Torna-ho a provar.';
         feedback.className = 'feedback bad';
       }
     }
+
+    function countCorrectAnswers() {
+      let correct = 0;
+
+      questions.forEach((question, index) => {
+        const input = document.getElementById(`q${index + 1}`);
+        if (input.value.trim().toLowerCase() === question.answer.toLowerCase()) {
+          correct += 1;
+        }
+      });
+
+      return correct;
+    }
+
+    renderQuiz();
+
+    quizContainer.addEventListener('click', (event) => {
+      if (event.target.tagName === 'BUTTON') {
+        const index = Number(event.target.dataset.index);
+        checkAnswer(index);
+      }
+    });
+
+    showScoreBtn.addEventListener('click', () => {
+      const correct = countCorrectAnswers();
+      finalScore.textContent = `Has encertat ${correct} de ${questions.length} preguntes.`;
+      finalScore.className = correct === questions.length ? 'results feedback ok' : 'results feedback bad';
+    });
   </script>
 </body>
 </html>
