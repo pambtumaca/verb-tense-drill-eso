@@ -111,6 +111,17 @@
       font: inherit;
       font-size: 1rem;
       background: white;
+      transition: background-color 0.35s ease, border-color 0.35s ease;
+    }
+
+    input.answer-correct {
+      background: #eaf8ef;
+      border-color: var(--ok);
+    }
+
+    input.answer-incorrect {
+      background: #fdecec;
+      border-color: var(--bad);
     }
 
     button {
@@ -245,15 +256,20 @@
       if (!value) {
         feedback.textContent = 'Write an answer first.';
         feedback.className = 'feedback bad';
+        input.classList.remove('answer-correct', 'answer-incorrect');
         return;
       }
 
       if (value === expected) {
-        feedback.textContent = 'Correct!';
+        feedback.textContent = 'Correct ✓';
         feedback.className = 'feedback ok';
+        input.classList.add('answer-correct');
+        input.classList.remove('answer-incorrect');
       } else {
-        feedback.textContent = 'Incorrect. Try again.';
+        feedback.textContent = `Incorrect ✗. Correct answer: ${question.answer}.`;
         feedback.className = 'feedback bad';
+        input.classList.add('answer-incorrect');
+        input.classList.remove('answer-correct');
       }
     }
 
