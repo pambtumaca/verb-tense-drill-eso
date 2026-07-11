@@ -190,13 +190,13 @@
   <article class="card">
     <header>
       <h1>Verb Tense Interactive Drill</h1>
-      <p>Practice present and past forms with a quick classroom drill for ESO students.</p>
+      <p>Practice present and past forms with a short classroom drill for secondary students.</p>
     </header>
 
     <main>
       <section class="intro">
-        <strong>First version</strong>
-        <p>This page helps students complete short sentences and check whether the verb form is correct.</p>
+        <strong>Instructions</strong>
+        <p>Students complete each sentence with the correct verb form and click <strong>Check</strong> to see the feedback on screen.</p>
       </section>
 
       <section class="quiz" id="quiz" aria-label="Verb tense quiz"></section>
@@ -207,7 +207,7 @@
       <div id="final-score" class="results" aria-live="polite"></div>
 
       <div class="footer-note">
-        Use this as a short practice activity or as a starting point for a fuller grammar review.
+        Use this as a starter activity, a guided review, or a quick self-check at the end of the lesson.
       </div>
     </main>
   </article>
@@ -221,6 +221,10 @@
       {
         text: 'They <em>(play)</em> ____ football yesterday.',
         answer: 'played'
+      },
+      {
+        text: 'My brother <em>(study)</em> ____ English on Mondays.',
+        answer: 'studies'
       }
     ];
 
@@ -237,7 +241,7 @@
           <label for="q${index + 1}">${index + 1}. ${question.text}</label>
           <div class="row">
             <input id="q${index + 1}" type="text" placeholder="Write the verb form">
-            <button type="button" data-index="${index}">Check answer</button>
+            <button type="button" data-index="${index}">Check</button>
           </div>
           <div id="f${index + 1}" class="feedback" aria-live="polite"></div>
         `;
