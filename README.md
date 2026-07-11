@@ -25,5 +25,7 @@ Alumnado de ESO, especialmente 1.º y 2.º de ESO, o cualquier grupo que necesit
 
 ## Estructura
 
+- css/style.css: estilos del recurso.
+- js/script.js: lógica del cuestionario y feedback.
 - index.html: recurso interactivo final.
 - README.md: guía breve de uso didáctico y prueba local.
