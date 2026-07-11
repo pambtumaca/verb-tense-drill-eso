@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Justificación Tarea 3 - Verb Tense Interactive Drill</title>
+  <style>
+    :root {
+      --ink: #1f2a44;
+      --muted: #4d5b75;
+      --line: #d9deea;
+      --accent: #2f6f8f;
+      --ok: #237950;
+      --panel: #f8fafd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Times New Roman", Georgia, serif;
+      color: var(--ink);
+      background: #ffffff;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 18mm 16mm;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      color: #15304f;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-top: 22px;
+      margin-bottom: 8px;
+    }
+
+    p, li {
+      font-size: 13.5px;
+    }
+
+    .meta {
+      display: grid;
+      gap: 6px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+    }
+
+    .box {
+      border-left: 4px solid var(--accent);
+      background: #f5f9fc;
+      padding: 10px 12px;
+      margin: 8px 0;
+    }
+
+    .ok {
+      color: var(--ok);
+      font-weight: 700;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    th, td {
+      border: 1px solid var(--line);
+      padding: 7px 8px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 13px;
+    }
+
+    th {
+      background: #eff4fb;
+    }
+
+    a {
+      color: #124d92;
+      word-break: break-all;
+    }
+
+    .small {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .capture {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 8px;
+      background: #ffffff;
+    }
+
+    .capture img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    @media print {
+      .page {
+        margin: 0;
+      }
+
+      a {
+        color: #0b3d78;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Justificación de la Tarea 3 (Acumulativa)</h1>
+
+    <section class="meta">
+      <div><strong>Proyecto:</strong> Verb Tense Interactive Drill</div>
+      <div><strong>Fecha:</strong> 2026-07-08</div>
+      <div><strong>Repositorio:</strong> <a href="https://github.com/pambtumaca/verb-tense-drill-eso">https://github.com/pambtumaca/verb-tense-drill-eso</a></div>
+    </section>
+
+    <h2>1. Objetivo de la mejora</h2>
+    <p>
+      La mejora de esta tarea se centra en aumentar el valor pedagógico del recurso: el alumnado recibe
+      feedback inmediato, claro y contextual dentro de la misma página, sin interrupciones de ventanas emergentes.
+      Esto permite corregir errores con información útil y continuar practicando de forma autónoma.
+    </p>
+
+    <h2>2. Cambios funcionales implementados</h2>
+    <ul>
+      <li>El feedback aparece dentro de la página al pulsar Check answer (sin usar alert).</li>
+      <li>Mensajes de resultado dentro del quiz: Correct ✓ o Incorrect ✗.</li>
+      <li>Codificación por color del feedback: verde cuando acierta, rojo cuando falla.</li>
+      <li>Resaltado visual de la respuesta escrita: fondo verde claro o rojo claro en el campo de entrada.</li>
+      <li>Cuando hay error, se muestra la forma verbal correcta para facilitar la corrección guiada.</li>
+      <li>Preguntas generadas dinámicamente desde un array de objetos (estructura mantenible y escalable).</li>
+      <li>Contador final de aciertos al cerrar la actividad.</li>
+    </ul>
+
+    <h2>3. Evidencia de valor para el aula</h2>
+    <div class="box">
+      <p>
+        Respecto a la versión anterior, el recurso ya no solo dice si está bien o mal: ahora ayuda a aprender
+        en el momento del error, porque muestra la solución correcta y destaca visualmente qué respuesta revisar.
+      </p>
+      <p class="ok">Impacto didáctico: más autonomía, menos frustración y corrección más rápida.</p>
+    </div>
+
+    <h2>4. Cumplimiento de criterios de evaluación</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Criterio</th>
+          <th>Cómo se cumple en el recurso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Interacción, feedback o apoyo al aprendizaje</td>
+          <td>El alumnado escribe respuestas y recibe feedback inmediato en cada pregunta, más resultado final.</td>
+        </tr>
+        <tr>
+          <td>Mejora no solo estética</td>
+          <td>Se añade orientación pedagógica: feedback explícito, respuesta correcta al error y apoyo visual.</td>
+        </tr>
+        <tr>
+          <td>Se puede explicar qué cambia para el alumnado</td>
+          <td>Pasa de una corrección binaria a una corrección formativa y contextual dentro de la actividad.</td>
+        </tr>
+        <tr>
+          <td>Sin errores evidentes en consola</td>
+          <td>Se ha revisado la lógica y no hay errores detectados en el archivo principal.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. Evidencias técnicas (Git)</h2>
+    <ul>
+      <li>Commit Tarea 3: <a href="https://github.com/pambtumaca/verb-tense-drill-eso/commit/cf93832">cf93832 - Improve in-page learning feedback for Task 3</a></li>
+      <li>Commit previo (idioma en inglés): <a href="https://github.com/pambtumaca/verb-tense-drill-eso/commit/ebaf552">ebaf552 - Set all UI messages to English</a></li>
+      <li>Mejora dinámica previa: <a href="https://github.com/pambtumaca/verb-tense-drill-eso/commit/f3b2286">f3b2286 - preguntas dinámicas y contador final</a></li>
+    </ul>
+
+    <h2>6. Recursos entregados</h2>
+    <ul>
+      <li>Código fuente actualizado en index.html.</li>
+      <li>Repositorio en GitHub con historial de commits.</li>
+      <li>Este documento PDF de justificación.</li>
+    </ul>
+
+    <h2>7. Captura del recurso en funcionamiento</h2>
+    <p>
+      Evidencia visual del feedback dentro de la página: se observa un caso incorrecto (en rojo, con la respuesta correcta indicada)
+      y un caso correcto (en verde), sin ventanas emergentes.
+    </p>
+    <figure class="capture">
+      <img src="captura-tarea3.png" alt="Captura del quiz mostrando feedback correcto e incorrecto en la misma página">
+    </figure>
+
+    <p class="small">
+      Nota: la captura se ha obtenido del propio recurso ejecutado localmente para evidenciar el comportamiento final de la tarea.
+    </p>
+  </main>
+</body>
+</html>
