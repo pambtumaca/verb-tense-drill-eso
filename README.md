@@ -23,9 +23,15 @@ Alumnado de ESO, especialmente 1.º y 2.º de ESO, o cualquier grupo que necesit
 3. Prueba respuestas correctas e incorrectas para comprobar el feedback.
 4. Pulsa Show final score para revisar la puntuación global.
 
+## Texto breve para la entrega
+
+Este recurso se puede usar como actividad de inicio, repaso o cierre en una sesión de inglés en ESO. El alumnado completa formas verbales en presente y pasado simple y recibe feedback inmediato en pantalla. Esto permite corregir errores al momento y comentar la respuesta correcta de forma guiada o autónoma. La actividad también puede emplearse como autoevaluación rápida al final de la clase.
+
 ## Estructura
 
 - css/style.css: estilos del recurso.
 - js/script.js: lógica del cuestionario y feedback.
 - index.html: recurso interactivo final.
+- captura-final.png: captura del recurso final funcionando.
+- entrega-tarea4.md: texto breve de apoyo para la entrega final.
 - README.md: guía breve de uso didáctico y prueba local.

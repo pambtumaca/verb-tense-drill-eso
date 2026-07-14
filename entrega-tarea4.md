@@ -1,0 +1,3 @@
+# Texto breve para la entrega final
+
+Este recurso se usaría en una sesión de inglés de ESO como actividad breve de repaso sobre present simple y past simple. El alumnado completa las formas verbales y recibe feedback inmediato en inglés dentro de la misma página. La persona docente puede proyectarlo para corrección conjunta o dejarlo como práctica individual. La puntuación final permite cerrar la actividad con una comprobación rápida del resultado.
