@@ -23,6 +23,13 @@ Alumnado de ESO, especialmente 1.º y 2.º de ESO, o cualquier grupo que necesit
 3. Prueba respuestas correctas e incorrectas para comprobar el feedback.
 4. Pulsa Show final score para revisar la puntuación global.
 
+## Versión publicada
+
+- URL de GitHub Pages: https://pambtumaca.github.io/verb-tense-drill-eso/
+- Repositorio: https://github.com/pambtumaca/verb-tense-drill-eso
+
+Esta versión publicada permite revisar el recurso sin descargar archivos ni abrirlo en local, por lo que resulta adecuada para una entrega de nivel avanzado.
+
 ## Texto breve para la entrega
 
 Este recurso se puede usar como actividad de inicio, repaso o cierre en una sesión de inglés en ESO. El alumnado completa formas verbales en presente y pasado simple y recibe feedback inmediato en pantalla. Esto permite corregir errores al momento y comentar la respuesta correcta de forma guiada o autónoma. La actividad también puede emplearse como autoevaluación rápida al final de la clase.
